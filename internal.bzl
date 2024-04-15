@@ -61,6 +61,15 @@ def internal_dependencies():
 
     maybe(
         http_archive,
+        name = "rrdtool",
+        build_file_content = _ALL_SRCS,
+        sha256 = "a199faeb7eff7cafc46fac253e682d833d08932f3db93a550a4a5af180ca58db",
+        strip_prefix = "rrdtool-1.7.2",
+        url = "https://github.com/oetiker/rrdtool-1.x/releases/download/v1.7.2/rrdtool-1.7.2.tar.gz",
+    )
+
+    maybe(
+        http_archive,
         name = "lapack",
         build_file_content = _ALL_SRCS,
         patch_cmds = LAPACK_PATCHES,
